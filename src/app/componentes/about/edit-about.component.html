@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" class="text-dark">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="usuario.nombre"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          name="apellido"
+          [(ngModel)]="usuario.apellido"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="cargoActual">Cargo Actual</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cargoActual"
+          name="cargoActual"
+          [(ngModel)]="usuario.cargoActual"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">descripcion</label>
+        <textarea
+          name="descripcion"
+          class="form-control"
+          id="descripcion"
+          cols="30"
+          rows="10"
+          [(ngModel)]="usuario.descripcion"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="photoUrl">Foto de perfil</label>
+        <input
+          type="file"
+          class="form-control"
+          id="photoUrl"
+          name="photoUrl"
+          [(ngModel)]="usuario.photoUrl"
+          (change)="uploadImage($event)"
+          accept=".jpg, .png, .jpeg"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="bannerUrl">Banner</label>
+        <input
+          type="file"
+          class="form-control"
+          id="bannerUrl"
+          name="bannerUrl"
+          [(ngModel)]="usuario.bannerUrl"
+          (change)="uploadImage($event)"
+          accept=".jpg, .png, .jpeg"
+          required
+        />
+      </div>
+      <button class="btn btn-dark mt-3">Editar educacion</button>
+    </form>
+  </div>
+</div>
